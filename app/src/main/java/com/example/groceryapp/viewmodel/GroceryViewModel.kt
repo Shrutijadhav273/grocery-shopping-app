@@ -1,11 +1,10 @@
 package com.example.groceryapp.viewmodel
 
-
 import android.app.Application
 import androidx.lifecycle.*
 import com.example.groceryapp.data.Grocery
+import com.example.groceryapp.data.GroceryDatabase
 import com.example.groceryapp.repository.GroceryRepository
-import com.shruti.groceryapp.data.GroceryDatabase
 import kotlinx.coroutines.launch
 
 class GroceryViewModel(application: Application) : AndroidViewModel(application) {
@@ -23,11 +22,9 @@ class GroceryViewModel(application: Application) : AndroidViewModel(application)
         repository.insert(grocery)
     }
 
-    fun update(grocery: Grocery) = viewModelScope.launch {
-        repository.update(grocery)
-    }
-
     fun delete(grocery: Grocery) = viewModelScope.launch {
         repository.delete(grocery)
     }
+
+    fun getById(id: Int) = repository.getById(id)
 }

@@ -1,8 +1,7 @@
-package com.shruti.groceryapp.data
+package com.example.groceryapp.data
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
-import com.example.groceryapp.data.Grocery
 
 @Dao
 interface GroceryDao {
@@ -18,4 +17,7 @@ interface GroceryDao {
 
     @Query("SELECT * FROM grocery_table ORDER BY id DESC")
     fun getAllGroceries(): LiveData<List<Grocery>>
+
+    @Query("SELECT * FROM grocery_table WHERE id = :id")
+    fun getGroceryById(id: Int): LiveData<Grocery>
 }

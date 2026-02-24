@@ -1,4 +1,5 @@
 package com.example.groceryapp.data
+
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
@@ -7,6 +8,6 @@ data class Grocery(
     @PrimaryKey(autoGenerate = true)
     val id: Int = 0,
     val name: String,
-    val quantity: Int,
+    val quantity: String,
     val price: Double
 )
