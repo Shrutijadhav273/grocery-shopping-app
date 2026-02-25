@@ -9,7 +9,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.example.groceryapp.ui.screens.GroceryScreen
+import com.example.groceryapp.ui.screens.HomeScreen
 import com.example.groceryapp.ui.screens.LoginScreen
 import com.example.groceryapp.ui.screens.SignupScreen
 import com.example.groceryapp.ui.theme.GroceryAppTheme
@@ -18,18 +18,13 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            GroceryAppTheme {
-                Surface(color = MaterialTheme.colorScheme.background) {
-                    val navController = rememberNavController()
-                    val authViewModel: AuthViewModel = viewModel(factory = androidx.lifecycle.ViewModelProvider.AndroidViewModelFactory.getInstance(application))
-                    val groceryViewModel: GroceryViewModel = viewModel(factory = androidx.lifecycle.ViewModelProvider.AndroidViewModelFactory.getInstance(application))
+            val navController = rememberNavController()
 
-                    NavHost(navController = navController, startDestination = "login") {
-                        composable("login") { LoginScreen(navController, authViewModel) }
-                        composable("signup") { SignupScreen(navController, authViewModel) }
-                        composable("grocery") { GroceryScreen(groceryViewModel) }
-                    }
-                }
+            NavHost(navController, startDestination = "login") {
+
+                composable("login") { LoginScreen(navController) }
+                composable("home") { HomeScreen(navController) }
+                composable("signup") { SignupScreen(navController) }
             }
         }
     }
