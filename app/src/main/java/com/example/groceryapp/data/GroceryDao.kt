@@ -9,11 +9,11 @@ interface GroceryDao {
     suspend fun getAll(): List<Grocery>
 
     @Insert
-    suspend fun insert(grocery: Grocery)
+    suspend fun insert(item: Grocery)
 
     @Update
-    suspend fun update(grocery: Grocery)
+    suspend fun update(item: Grocery)
 
     @Delete
-    suspend fun delete(grocery: Grocery)
+    suspend fun delete(item: Grocery)
 }
