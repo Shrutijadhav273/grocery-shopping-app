@@ -5,13 +5,8 @@ import com.example.groceryapp.data.GroceryDao
 
 class GroceryRepository(private val dao: GroceryDao) {
 
-    val allGroceries = dao.getAllGroceries()
-
-    suspend fun insert(grocery: Grocery) = dao.insert(grocery)
-
-    suspend fun update(grocery: Grocery) = dao.update(grocery)
-
-    suspend fun delete(grocery: Grocery) = dao.delete(grocery)
-
-    fun getById(id: Int) = dao.getGroceryById(id)
+    suspend fun getAllItems() = dao.getAll()
+    suspend fun insertItem(item: Grocery) = dao.insert(item)
+    suspend fun updateItem(item: Grocery) = dao.update(item)
+    suspend fun deleteItem(item: Grocery) = dao.delete(item)
 }

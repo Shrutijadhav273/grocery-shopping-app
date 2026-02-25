@@ -12,7 +12,7 @@ import androidx.navigation.NavController
 @Composable
 fun DetailScreen(
     navController: NavController,
-    name: String
+    id: Int
 ) {
 
     Scaffold(
@@ -35,12 +35,12 @@ fun DetailScreen(
         ) {
 
             Text(
-                text = "Item Name:",
+                text = "Item ID:",
                 style = MaterialTheme.typography.labelLarge
             )
 
             Text(
-                text = name,
+                text = id.toString(),
                 style = MaterialTheme.typography.headlineMedium
             )
 

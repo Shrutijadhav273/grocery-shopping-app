@@ -1,7 +1,9 @@
 package com.example.groceryapp.navigation
 
 import androidx.compose.runtime.Composable
+import androidx.navigation.NavType
 import androidx.navigation.compose.*
+import androidx.navigation.navArgument
 import com.example.groceryapp.ui.screens.*
 
 @Composable
@@ -26,9 +28,15 @@ fun NavGraph() {
             AddEditScreen(navController)
         }
 
-        composable("detail/{itemName}") { backStackEntry ->
-            val name = backStackEntry.arguments?.getString("itemName")
-            DetailScreen(navController, name ?: "")
+        composable(
+            route = "detail/{id}",
+            arguments = listOf(
+                navArgument("id") { type = NavType.IntType }
+            )
+        ) { backStackEntry ->
+
+            val id = backStackEntry.arguments?.getInt("id") ?: 0
+            DetailScreen(navController, id)
         }
     }
 }
