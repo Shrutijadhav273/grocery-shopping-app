@@ -13,7 +13,6 @@ import com.example.groceryapp.ui.screens.GroceryScreen
 import com.example.groceryapp.ui.screens.LoginScreen
 import com.example.groceryapp.ui.screens.SignupScreen
 import com.example.groceryapp.ui.theme.GroceryAppTheme
-import com.example.groceryapp.viewmodel.AuthViewModel
 import com.example.groceryapp.viewmodel.GroceryViewModel
 
 class MainActivity : ComponentActivity() {

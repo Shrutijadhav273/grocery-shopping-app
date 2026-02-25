@@ -3,8 +3,6 @@ package com.example.groceryapp.viewmodel
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.groceryapp.data.AppDatabase
-import com.example.groceryapp.data.Grocery
 import com.example.groceryapp.repository.GroceryRepository
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
